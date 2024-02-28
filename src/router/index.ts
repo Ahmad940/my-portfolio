@@ -12,8 +12,6 @@ const scrollBehavior: RouterScrollBehavior = (to, from, savedPosition) => {
     return savedPosition
   }
 
-  console.log('else')
-
   return { left: 0, top: 0 }
 }
 

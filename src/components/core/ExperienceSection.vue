@@ -1,6 +1,7 @@
 <template>
   <section
     id="experience"
+    ref="target"
     class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
     aria-label="Work experience"
   >
@@ -116,6 +117,24 @@
 import LinkIcon from '@/components/icons/LinkIcon.vue'
 import PathIcon from '@/components/icons/PathIcon.vue'
 import { experienceData } from '@/data/experience.data'
+import { useAppStore } from '@/stores/app.store'
+import { useIntersectionObserver } from '@vueuse/core'
+import { ref } from 'vue'
+
+const appStore = useAppStore()
+
+const target = ref<HTMLDivElement>()
+
+useIntersectionObserver(
+  target,
+  ([{ isIntersecting, intersectionRatio, boundingClientRect }]) => {
+    if (isIntersecting) {
+      // alert('Hello world')
+      appStore?.setActiveLink('#experience')
+    }
+  },
+  { rootMargin: '0px 0px', threshold: 0.3 }
+)
 </script>
 
 <style scoped></style>

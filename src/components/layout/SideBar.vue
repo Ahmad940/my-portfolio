@@ -12,12 +12,17 @@
         {{ aboutData?.role }}
       </h2>
 
-      <p class="mt-4 max-w-xs leading-normal">{{ aboutData?.brief_description }}</p>
+      <p class="mt-4 max-w-xs leading-normal text-justify">{{ aboutData?.brief_description }}</p>
 
       <nav class="hidden lg:block" aria-label="In-page jump links">
+        {{ appStore?.activeLink }}
         <ul class="mt-16 w-max">
           <li v-for="item in navLinks" :key="item.id">
-            <Link :to="item?.id" class="group flex items-center py-3">
+            <Link
+              :to="item?.id"
+              class="group flex items-center py-3"
+              :class="[appStore.activeLink === item?.id && 'active']"
+            >
               <!-- <span class="bg-slate-200 w-5 h-1"></span> -->
               <span
                 class="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 group-active:text-red-400 motion-reduce:transition-none"
@@ -54,7 +59,20 @@
 <script setup lang="ts">
 import { aboutData } from '@/data/about.data'
 import { navLinks, socialsData } from '@/data/meta.data'
+import { useAppStore } from '@/stores/app.store'
 import Link from '../base/Link.vue'
+
+const appStore = useAppStore()
 </script>
 
-<style scoped></style>
+<style scoped>
+.active {
+  .nav-indicator {
+    @apply w-16;
+    background: rgb(226 232 240 / var(--tw-bg-opacity));
+  }
+  .nav-text {
+    color: rgb(226 232 240 / var(--tw-text-opacity));
+  }
+}
+</style>

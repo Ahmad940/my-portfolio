@@ -1,6 +1,7 @@
 <template>
   <section
     id="skills"
+    ref="target"
     class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
     aria-label="Skills"
   >
@@ -24,6 +25,23 @@
 
 <script setup lang="ts">
 import { skillsData } from '@/data/skills.data'
+import { useAppStore } from '@/stores/app.store'
+import { useIntersectionObserver } from '@vueuse/core'
+import { ref } from 'vue'
+
+const appStore = useAppStore()
+
+const target = ref<HTMLDivElement>()
+
+useIntersectionObserver(
+  target,
+  ([{ isIntersecting }]) => {
+    if (isIntersecting) {
+      appStore?.setActiveLink('#skills')
+    }
+  },
+  { rootMargin: '0px 0px', threshold: 0 }
+)
 </script>
 
 <style scoped></style>

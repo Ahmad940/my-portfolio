@@ -1,6 +1,7 @@
 <template>
   <section
     id="projects"
+    ref="target"
     class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
     aria-label="Selected projects"
   >
@@ -113,6 +114,25 @@
 import { projectsData } from '@/data/projects.data'
 import DownloadIcon from '../icons/DownloadIcon.vue'
 import PathIcon from '../icons/PathIcon.vue'
+
+import { useAppStore } from '@/stores/app.store'
+import { useIntersectionObserver } from '@vueuse/core'
+import { ref } from 'vue'
+
+const appStore = useAppStore()
+
+const target = ref<HTMLDivElement>()
+
+useIntersectionObserver(
+  target,
+  ([{ isIntersecting, intersectionRatio, boundingClientRect }]) => {
+    if (isIntersecting) {
+      // alert('Hello world')
+      appStore?.setActiveLink('#projects')
+    }
+  },
+  { rootMargin: '0px 0px', threshold: 0.3 }
+)
 </script>
 
 <style scoped></style>
