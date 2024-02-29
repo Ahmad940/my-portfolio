@@ -14,7 +14,11 @@
       <TooltipProvider v-for="(skill, index) in skillsData" :key="index">
         <Tooltip>
           <TooltipTrigger>
-            <a :href="skill?.url" :aria-label="`${skill?.label} (opens in a new tab)`">
+            <a
+              :href="skill?.url"
+              :aria-label="`${skill?.label} (opens in a new tab)`"
+              target="_blank"
+            >
               <component v-bind:is="skill.icon" class="h-10 w-10"></component>
             </a>
           </TooltipTrigger>
