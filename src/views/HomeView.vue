@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import AboutSection from '@/components/core/AboutSection.vue'
 import ExperienceSection from '@/components/core/ExperienceSection.vue'
-import FooterSection from '@/components/core/FooterSection.vue'
 import ProjectSection from '@/components/core/ProjectSection.vue'
 import SkillSection from '@/components/core/SkillSection.vue'
 </script>
@@ -14,6 +13,6 @@ import SkillSection from '@/components/core/SkillSection.vue'
     </div>
     <ExperienceSection />
     <ProjectSection />
-    <FooterSection />
+    <!-- <FooterSection /> -->
   </main>
 </template>
