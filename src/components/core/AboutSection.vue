@@ -34,13 +34,13 @@ const target = ref<HTMLDivElement>()
 
 useIntersectionObserver(
   target,
-  ([{ isIntersecting, intersectionRatio, boundingClientRect }]) => {
+  ([{ isIntersecting }]) => {
     if (isIntersecting) {
       // alert('Hello world')
       appStore?.setActiveLink('#about')
     }
   },
-  { rootMargin: '0px 0px', threshold: 0 }
+  { rootMargin: '0px 0px', threshold: 0.4 }
 )
 </script>
 

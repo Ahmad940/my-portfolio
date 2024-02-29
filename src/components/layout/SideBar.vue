@@ -15,7 +15,6 @@
       <p class="mt-4 max-w-xs leading-normal text-justify">{{ aboutData?.brief_description }}</p>
 
       <nav class="hidden lg:block" aria-label="In-page jump links">
-        {{ appStore?.activeLink }}
         <ul class="mt-16 w-max">
           <li v-for="item in navLinks" :key="item.id">
             <Link

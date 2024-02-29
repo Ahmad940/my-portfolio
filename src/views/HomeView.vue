@@ -8,8 +8,10 @@ import SkillSection from '@/components/core/SkillSection.vue'
 
 <template>
   <main class="pt-24 lg:w-1/2 lg:py-24">
-    <AboutSection />
-    <SkillSection />
+    <div class="flex flex-col">
+      <SkillSection class="order-2" />
+      <AboutSection class="order-1" />
+    </div>
     <ExperienceSection />
     <ProjectSection />
     <FooterSection />

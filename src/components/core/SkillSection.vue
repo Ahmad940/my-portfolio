@@ -40,7 +40,7 @@ useIntersectionObserver(
       appStore?.setActiveLink('#skills')
     }
   },
-  { rootMargin: '0px 0px', threshold: 0 }
+  { rootMargin: '0px 0px', threshold: 0.3 }
 )
 </script>
 

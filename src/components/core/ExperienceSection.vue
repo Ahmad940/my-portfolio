@@ -133,7 +133,7 @@ useIntersectionObserver(
       appStore?.setActiveLink('#experience')
     }
   },
-  { rootMargin: '0px 0px', threshold: 0.3 }
+  { rootMargin: '0px 0px', threshold: 0.5 }
 )
 </script>
 
