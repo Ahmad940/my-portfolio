@@ -23,7 +23,7 @@
             ></div>
             <header
               class="z-10 mb-2 mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500 sm:col-span-2"
-              aria-label="July to December 2017"
+              :aria-label="experience?.duration"
             >
               {{ experience?.duration }}
             </header>

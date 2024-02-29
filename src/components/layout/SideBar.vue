@@ -38,7 +38,11 @@
 
     <!-- Socials -->
     <ul class="ml-1 mt-8 flex items-center" aria-label="Social media">
-      <li class="mr-5 text-xs shrink-0" v-for="item in socialsData" :key="item?.title">
+      <li
+        class="mr-5 text-xs shrink-0 transition-all transform duration-500 hover:-translate-y-1"
+        v-for="item in socialsData"
+        :key="item?.title"
+      >
         <a
           class="block hover:text-slate-200"
           :href="item?.url"
