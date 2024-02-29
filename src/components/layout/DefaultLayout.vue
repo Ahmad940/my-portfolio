@@ -1,14 +1,15 @@
 <template>
   <div class="relative">
+    <!-- Cursor glow -->
     <div
       class="pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute"
-      style="
-        background: radial-gradient(
-          600px circle at 0px 0px,
+      :style="{
+        background: `radial-gradient(
+          600px circle at ${x}px ${y}px,
           rgba(29, 78, 216, 0.15),
           transparent 80%
-        );
-      "
+        )`
+      }"
     ></div>
 
     <div
@@ -28,7 +29,10 @@
 </template>
 
 <script setup lang="ts">
+import { useMouse } from '@vueuse/core'
 import SideBar from './SideBar.vue'
+
+const { x, y } = useMouse()
 </script>
 
 <style scoped></style>

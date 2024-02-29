@@ -35,7 +35,7 @@ export const experienceData = [
       { name: 'Defcomm', url: 'https://defcomm.ng/' },
       { name: 'Traffic Offense Booking', url: '' }
     ],
-    technologies: ['Node', 'Nestjs', 'Websocket', 'Next.js', 'AWS']
+    technologies: ['Node', 'Nestjs', 'Socket.io', 'Next.js', 'AWS']
   },
   {
     organization: 'Fun Mobile',

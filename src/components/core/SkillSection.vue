@@ -11,14 +11,18 @@
       <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">Skills</h2>
     </div>
     <div class="inline-flex flex-wrap gap-5">
-      <a
-        :href="skill?.url"
-        v-for="(skill, index) in skillsData"
-        :key="index"
-        :aria-label="`${skill?.label} (opens in a new tab)`"
-      >
-        <component v-bind:is="skill.icon" class="h-10 w-10"></component>
-      </a>
+      <TooltipProvider v-for="(skill, index) in skillsData" :key="index">
+        <Tooltip>
+          <TooltipTrigger>
+            <a :href="skill?.url" :aria-label="`${skill?.label} (opens in a new tab)`">
+              <component v-bind:is="skill.icon" class="h-10 w-10"></component>
+            </a>
+          </TooltipTrigger>
+          <TooltipContent class="bg-slate-400 border-none">
+            <p>{{ skill?.label }}</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
     </div>
   </section>
 </template>
@@ -28,6 +32,7 @@ import { skillsData } from '@/data/skills.data'
 import { useAppStore } from '@/stores/app.store'
 import { useIntersectionObserver } from '@vueuse/core'
 import { ref } from 'vue'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip'
 
 const appStore = useAppStore()
 

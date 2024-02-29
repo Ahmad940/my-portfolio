@@ -16,7 +16,13 @@
     "@vueuse/core": "^10.8.0",
     "@vueuse/motion": "^2.0.0",
     "@vueuse/router": "^10.8.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "lucide-vue-next": "^0.343.0",
     "pinia": "^2.1.7",
+    "radix-vue": "^1.4.9",
+    "tailwind-merge": "^2.2.1",
+    "tailwindcss-animate": "^1.0.7",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5"
   },
