@@ -1,3 +1,4 @@
+import EmailIcon from '@/components/icons/EmailIcon.vue'
 import GithubIcon from '@/components/icons/GithubIcon.vue'
 import LinkedinIcon from '@/components/icons/LinkedinIcon.vue'
 import XIcon from '@/components/icons/XIcon.vue'
@@ -22,6 +23,11 @@ export const navLinks = [
 ]
 
 export const socialsData = [
+  {
+    title: 'Email',
+    icon: EmailIcon,
+    url: 'mailto://ahmadmuhammadmak5@gmail.com'
+  },
   {
     title: 'Github',
     icon: GithubIcon,
