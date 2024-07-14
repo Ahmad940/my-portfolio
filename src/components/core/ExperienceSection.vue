@@ -11,7 +11,7 @@
       <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">
         Experience
       </h2>
-    </div>
+    </div> 
     <div>
       <ol class="group/list">
         <li class="mb-12" v-for="(experience, index) in experienceData.slice(0, 5)" :key="index">
